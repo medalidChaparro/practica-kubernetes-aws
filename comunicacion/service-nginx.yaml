@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-11-18T06:44:47Z"
+  labels:
+    app: nginx-prueba
+  name: nginx-prueba
+  namespace: default
+  resourceVersion: "1411"
+  uid: 18cd323b-7b80-4807-85f8-dd2b57dc8e6e
+spec:
+  clusterIP: 10.97.112.214
+  clusterIPs:
+  - 10.97.112.214
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30335
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-prueba
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
